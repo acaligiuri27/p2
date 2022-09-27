@@ -1,8 +1,6 @@
 package anagrams;
 
-import java.security.Key;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -23,7 +21,7 @@ public class AlphaCount {
     private void hashMapAdder(HashMap<Character, Integer> charCounts)
     {
         // put the letter with the count in the map in this function
-        int count = 0;
+        int count;
         for(int i = 0; i < size; i++)
         {
             count = getLetter(input.charAt(i));
