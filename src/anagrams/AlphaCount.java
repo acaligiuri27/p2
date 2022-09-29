@@ -8,9 +8,7 @@ public class AlphaCount {
     private String input;
     private int size;
     private HashMap<Character, Integer> charCounts = new HashMap<>();
-    public AlphaCount(){
-        this.charCounts = charCounts;
-    }
+    public AlphaCount(){ this.charCounts = charCounts; }
     //Creates an AlphaCount that stores a count of each alphabetic letter in the given string. It should ignore non-letters.
     public AlphaCount(java.lang.String input){
         this.input = input.toLowerCase();

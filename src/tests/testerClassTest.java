@@ -1,8 +1,10 @@
 package tests;
 
 import anagrams.AlphaCount;
+import anagrams.Anagram;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -117,6 +119,36 @@ class testerClassTest {
         System.out.println(fifth.hashCode());
 
     }
+
+    @Test
+    public void anagramFirstTests()
+    {
+        ArrayList<String> testList = new ArrayList<>();
+        testList.add("one");
+        testList.add("two");
+        testList.add("three");
+
+        ArrayList<String> testListToAdd = new ArrayList<>();
+        testListToAdd.add("four");
+
+        Anagram testAnagram = new Anagram(testList);
+        System.out.println(testAnagram.toString());
+
+        Anagram testAnagramToAdd = new Anagram(testListToAdd);
+        System.out.println(testAnagramToAdd.toString());
+
+        Anagram resultOfAdd;
+        resultOfAdd= testAnagram.addAnagram(testAnagramToAdd);
+        System.out.println(resultOfAdd.toString());
+
+        resultOfAdd = resultOfAdd.addWord("five");
+        System.out.println(resultOfAdd.toString());
+
+
+
+
+    }
+
 
 
 
