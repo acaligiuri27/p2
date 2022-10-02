@@ -2,15 +2,60 @@ package tests;
 
 import anagrams.AlphaCount;
 import anagrams.Anagram;
+import anagrams.AnagramGenerator;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class testerClassTest {
+
+    public List<String> fileMaker()
+    {
+        List<String> lexicon = new ArrayList<>();
+        Scanner fileScanner = null;
+
+        File file = new File("resources//small.lex.txt");
+        try{
+            fileScanner = new Scanner(new FileReader(file));}
+        catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        while(fileScanner.hasNext())
+        {
+            lexicon.add(fileScanner.next());
+        }
+
+        return lexicon;
+    }
+
+    public List<String> fileMaker2()
+    {
+        List<String> lexicon = new ArrayList<>();
+        Scanner fileScanner = null;
+
+        File file = new File("resources//class.lex.txt");
+        try{
+            fileScanner = new Scanner(new FileReader(file));}
+        catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        while(fileScanner.hasNext())
+        {
+            lexicon.add(fileScanner.next());
+        }
+
+        return lexicon;
+    }
 
     @Test
     public void simpleTests()
@@ -121,6 +166,27 @@ class testerClassTest {
     }
 
     @Test
+    public void alphaCountHashCodeTests()
+    {
+        AlphaCount first = new AlphaCount("raceaosiudhgaiusdhguoasdhgiuohasdoithewiohfoiqwhegoihqweiaghasdihgioasdhgiosadhgsadhoighasdoig");
+        AlphaCount second = new AlphaCount("car");
+        AlphaCount third = new AlphaCount("ecar");
+
+        System.out.println(first.equals(third));
+
+        System.out.println(first.hashCode());
+        System.out.println(third.hashCode());
+
+
+        char character = 'r';
+        System.out.println(Character.hashCode('r'));
+        System.out.println(Character.hashCode('a'));
+        System.out.println(Character.hashCode('c'));
+
+    }
+
+
+    @Test
     public void anagramFirstTests()
     {
         ArrayList<String> testList = new ArrayList<>();
@@ -130,6 +196,14 @@ class testerClassTest {
 
         ArrayList<String> testListToAdd = new ArrayList<>();
         testListToAdd.add("four");
+
+        ArrayList<String> hashCodeTest = new ArrayList<>();
+        hashCodeTest.add("one");
+        hashCodeTest.add("two");
+        hashCodeTest.add("three");
+        hashCodeTest.add("four");
+        hashCodeTest.add("five");
+        Anagram hashCodeTestAnagram = new Anagram(hashCodeTest);
 
         Anagram testAnagram = new Anagram(testList);
         System.out.println(testAnagram.toString());
@@ -143,15 +217,63 @@ class testerClassTest {
 
         resultOfAdd = resultOfAdd.addWord("five");
         System.out.println(resultOfAdd.toString());
+        System.out.println(hashCodeTestAnagram.toString());
 
-
-
+        System.out.println(resultOfAdd.equals(hashCodeTestAnagram));
 
     }
 
+    @Test
+    public void anagramGeneratorBasicTests()
+    {
+        List<String> lexicon = fileMaker();
+        List<Anagram> testList;
+        AnagramGenerator test = new AnagramGenerator(lexicon);
+        testList = test.generateAnagram("over");
+        for(int i = 0; i < testList.size(); i++)
+        {
+            System.out.println(testList.get(i).toString());
+        }
+    }
 
+    @Test
+    public void anagramGeneratorBasicTests2()
+    {
+        List<String> lexicon = fileMaker();
+        List<Anagram> testList;
+        AnagramGenerator test = new AnagramGenerator(lexicon);
+        testList = test.generateAnagram("overover");
+        for(int i = 0; i < testList.size(); i++)
+        {
+            System.out.println(testList.get(i).toString());
+        }
+    }
 
+    @Test
+    public void anagramGeneratorBasicTests3()
+    {
+        List<String> lexicon = fileMaker();
+        List<Anagram> testList;
+        AnagramGenerator test = new AnagramGenerator(lexicon);
+        testList = test.generateAnagram("wwwweeettttoss");
+        for(int i = 0; i < testList.size(); i++)
+        {
+            System.out.println(testList.get(i).toString());
+        }
+    }
 
+    @Test
+    public void anagramGeneratorClassTests()
+    {
+        List<String> lexicon = fileMaker2();
+        List<Anagram> testList;
+        AnagramGenerator test = new AnagramGenerator(lexicon);
+        testList = test.generateAnagram("carebears");
+        for(int i = 0; i < testList.size(); i++)
+        {
+            System.out.println(testList.get(i).toString());
+        }
+    }
 
 
 }

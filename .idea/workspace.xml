@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="379ed3ed-ac10-461e-9494-390113408d63" name="Changes" comment="random changes">
+    <list default="true" id="379ed3ed-ac10-461e-9494-390113408d63" name="Changes" comment="Updates and almost working anagram">
+      <change afterPath="$PROJECT_DIR$/resources/class.lex.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/hashtable.large.output.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/large.lex.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/small.lex.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/westover.large.output.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/westover.small.output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/caligia998.p2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/caligia998.p2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/anagrams/AlphaCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/anagrams/AlphaCount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/anagrams/Anagram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/anagrams/Anagram.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/anagrams/AnagramGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/anagrams/AnagramGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/anagrams/ConsoleInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/anagrams/ConsoleInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tests/testerClassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/testerClassTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,23 +46,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/acali/IdeaProjects/caligia998.p1&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
+    "last_opened_file_path": "C:/Users/acali/IdeaProjects/caligia998.p2/resources",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\acali\IdeaProjects\caligia998.p2\resources" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
@@ -62,20 +76,7 @@
       <recent name="tests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.testerClassTest.anagramFirstTests">
-    <configuration name="MS1Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="anagrams.MS1Main" />
-      <module name="caligia998.p2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="anagrams.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.testerClassTest.anagramGeneratorBasicTests2">
     <configuration name="testerClassTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="caligia998.p2" />
       <extension name="coverage">
@@ -91,7 +92,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="testerClassTest.anagramFirstTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="testerClassTest.anagramGeneratorBasicTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="caligia998.p2" />
       <extension name="coverage">
         <pattern>
@@ -101,13 +102,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.testerClassTest" />
-      <option name="METHOD_NAME" value="anagramFirstTests" />
+      <option name="METHOD_NAME" value="anagramGeneratorBasicTests" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="testerClassTest.hashCodes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="testerClassTest.anagramGeneratorBasicTests2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="caligia998.p2" />
       <extension name="coverage">
         <pattern>
@@ -117,13 +118,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.testerClassTest" />
-      <option name="METHOD_NAME" value="hashCodes" />
+      <option name="METHOD_NAME" value="anagramGeneratorBasicTests2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="testerClassTest.subsetTests2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="testerClassTest.anagramGeneratorBasicTests3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="caligia998.p2" />
       <extension name="coverage">
         <pattern>
@@ -133,7 +134,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.testerClassTest" />
-      <option name="METHOD_NAME" value="subsetTests2" />
+      <option name="METHOD_NAME" value="anagramGeneratorBasicTests3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testerClassTest.anagramGeneratorClassTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="caligia998.p2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.testerClassTest" />
+      <option name="METHOD_NAME" value="anagramGeneratorClassTests" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -141,11 +158,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.testerClassTest.anagramFirstTests" />
+        <item itemvalue="JUnit.testerClassTest.anagramGeneratorBasicTests2" />
+        <item itemvalue="JUnit.testerClassTest.anagramGeneratorBasicTests3" />
+        <item itemvalue="JUnit.testerClassTest.anagramGeneratorClassTests" />
+        <item itemvalue="JUnit.testerClassTest.anagramGeneratorBasicTests" />
         <item itemvalue="JUnit.testerClassTest" />
-        <item itemvalue="Application.MS1Main" />
-        <item itemvalue="JUnit.testerClassTest.hashCodes" />
-        <item itemvalue="JUnit.testerClassTest.subsetTests2" />
       </list>
     </recent_temporary>
   </component>
@@ -172,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664301925437</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Updates and almost working anagram">
+      <created>1664484832445</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1664484832445</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -189,6 +213,30 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First time" />
     <MESSAGE value="random changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="random changes" />
+    <MESSAGE value="Updates and almost working anagram" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updates and almost working anagram" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="15" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.StackOverflowError" package="java.lang" />
+          <option name="timeStamp" value="27" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/anagrams/AnagramGenerator.java</url>
+          <line>50</line>
+          <properties class="anagrams.AnagramGenerator" method="walkthroughBackTrack">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

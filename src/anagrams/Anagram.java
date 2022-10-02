@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Anagram {
     private List words = new ArrayList<>();
-    public Anagram(){}
+    public Anagram(){this.words = words;}
     //Creates a new anagram with the words in the given list. Because this class is immutable, it should copy the words into its own list.
     public Anagram(java.util.List<java.lang.String> words){
         this.words=words;
@@ -33,9 +33,30 @@ public class Anagram {
     public int size() { return words.size(); }
 
     public boolean equals(java.lang.Object otherObject)
-    {
-        return false;
+    {// TODO cannont use hashcode here
+        boolean retVal = false;
+        if(getClass() != otherObject.getClass())
+        {
+            retVal = false;
+        }
+        else {
+            int thisHashCode = 0;
+            int otherHashCode = 0;
+            Anagram other = (Anagram) otherObject;
+            for (int i = 0; i < this.words.size(); i++) {
+                thisHashCode += this.words.get(i).hashCode();
+            }
+            for (int i = 0; i < other.words.size(); i++) {
+                otherHashCode += other.words.get(i).hashCode();
+            }
+            if(thisHashCode == otherHashCode)
+            {
+                retVal = true;
+            }
+        }
+        return retVal;
     }
+
 
     public java.lang.String toString()
     {

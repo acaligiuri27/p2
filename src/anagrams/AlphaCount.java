@@ -8,7 +8,10 @@ public class AlphaCount {
     private String input;
     private int size;
     private HashMap<Character, Integer> charCounts = new HashMap<>();
-    public AlphaCount(){ this.charCounts = charCounts; }
+    public AlphaCount(){
+        this.charCounts = charCounts;
+        this.size = size();
+    }
     //Creates an AlphaCount that stores a count of each alphabetic letter in the given string. It should ignore non-letters.
     public AlphaCount(java.lang.String input){
         this.input = input.toLowerCase();
@@ -54,6 +57,11 @@ public class AlphaCount {
 
     public int size()
     {
+        int size = 0;
+        for(Map.Entry<Character,Integer> entry : charCounts.entrySet())
+        {
+            size = entry.getValue();
+        }
         return size;
     }
 
@@ -93,14 +101,6 @@ public class AlphaCount {
             }
         }
         combinedWords.charCounts = copyCharCounts;
-        Integer valueArray[] = new Integer[]{};
-        copyCharCounts.values().toArray(valueArray);
-        size = 0;
-        for(int i = 0; i < valueArray.length; i++)
-        {
-            size += valueArray[i];
-        }
-
 
         return combinedWords;
         // how to put this into its own map
@@ -124,7 +124,7 @@ public class AlphaCount {
         {
             keyIsPresent = copyCharCounts.containsKey(entry.getKey());
             // if the key is present, get the value from both others map and copy map, add them together
-            if(keyIsPresent == true)
+            if(keyIsPresent)
             {
                 copyValue = copyCharCounts.get(entry.getKey());
                 otherValue = other.charCounts.get(entry.getKey());
@@ -140,13 +140,6 @@ public class AlphaCount {
             }
         }
         combinedWords.charCounts = copyCharCounts;
-        Integer valueArray[] = new Integer[]{};
-        copyCharCounts.values().toArray(valueArray);
-        size = 0;
-        for(int i = 0; i < valueArray.length; i++)
-        {
-            size += valueArray[i];
-        }
         return combinedWords;
     }
 
@@ -163,7 +156,7 @@ public class AlphaCount {
         {
             keyIsPresent = charCounts.containsKey(entry.getKey());
             // if the key is present, get the value from both others map and copy map, add them together
-            if(keyIsPresent == true)
+            if(keyIsPresent)
             {
                 charValue = charCounts.get(entry.getKey());
                 otherValue = other.charCounts.get(entry.getKey());
@@ -184,15 +177,33 @@ public class AlphaCount {
     public boolean equals(java.lang.Object otherObject)
     {
         //Returns true iff both AlphaCounts have the same letters with the same counts for each letter.
-        int firstHash = Objects.hashCode(charCounts);
-        int otherHash = otherObject.hashCode();
-        return firstHash == otherHash;
+        boolean retVal = false;
+        if(getClass() != otherObject.getClass())
+        {
+            retVal = false;
+        }
+        else {
+            AlphaCount other = (AlphaCount) otherObject;
+            if (this.hashCode() == other.hashCode())
+            {
+                retVal = true;
+            }
+
+        }
+        return retVal;
     }
 
     public int hashCode()
     {
         //See java.lang.Object.hashCode() for an in-depth description of the contract made by this method. Also, see the lecture notes for hashing.
-        int hash =(Objects.hash(charCounts, size) * 479);
+        int hash = 0;
+        final int PRIME = 9973;
+        for(Map.Entry<Character,Integer> entry : charCounts.entrySet())
+        {
+            // TODO multiply this by a larger prime numbers, much larger
+            hash += entry.getKey().hashCode() * PRIME;
+            hash += entry.getValue().hashCode() * PRIME;
+        }
         return hash;
     }
 

@@ -1,0 +1,8 @@
+over stew
+over west
+rove stew
+rove west
+stew over
+stew rove
+west over
+west rove
