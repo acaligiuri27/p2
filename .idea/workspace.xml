@@ -1,20 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="379ed3ed-ac10-461e-9494-390113408d63" name="Changes" comment="Updates and almost working anagram">
-      <change afterPath="$PROJECT_DIR$/resources/class.lex.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/hashtable.large.output.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/large.lex.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/small.lex.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/westover.large.output.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/westover.small.output.txt" afterDir="false" />
+    <list default="true" id="379ed3ed-ac10-461e-9494-390113408d63" name="Changes" comment="Half working anagram generator">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/caligia998.p2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/caligia998.p2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/anagrams/AlphaCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/anagrams/AlphaCount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/anagrams/Anagram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/anagrams/Anagram.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/anagrams/AnagramGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/anagrams/AnagramGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/anagrams/ConsoleInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/anagrams/ConsoleInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/testerClassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/testerClassTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +65,7 @@
       <recent name="tests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.testerClassTest.anagramGeneratorBasicTests2">
+  <component name="RunManager" selected="JUnit.testerClassTest.anagramGeneratorClassTests">
     <configuration name="testerClassTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="caligia998.p2" />
       <extension name="coverage">
@@ -158,9 +147,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.testerClassTest.anagramGeneratorClassTests" />
         <item itemvalue="JUnit.testerClassTest.anagramGeneratorBasicTests2" />
         <item itemvalue="JUnit.testerClassTest.anagramGeneratorBasicTests3" />
-        <item itemvalue="JUnit.testerClassTest.anagramGeneratorClassTests" />
         <item itemvalue="JUnit.testerClassTest.anagramGeneratorBasicTests" />
         <item itemvalue="JUnit.testerClassTest" />
       </list>
@@ -196,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664484832445</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Half working anagram generator">
+      <created>1664751721927</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1664751721927</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -214,7 +210,8 @@
     <MESSAGE value="First time" />
     <MESSAGE value="random changes" />
     <MESSAGE value="Updates and almost working anagram" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updates and almost working anagram" />
+    <MESSAGE value="Half working anagram generator" />
+    <option name="LAST_COMMIT_MESSAGE" value="Half working anagram generator" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -229,7 +226,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/anagrams/AnagramGenerator.java</url>
-          <line>50</line>
+          <line>51</line>
           <properties class="anagrams.AnagramGenerator" method="walkthroughBackTrack">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

@@ -45,6 +45,7 @@ public class AnagramGenerator {
             }
         }
 
+        //generatorBackTrack(anagramList, userInput, returnAnagrams);
         return anagramList;
     }
 
@@ -72,6 +73,30 @@ public class AnagramGenerator {
 
 
     }
+
+    private void generatorBackTrack(List anagramList, AlphaCount userInput, Anagram returnAnagrams) {
+        String compareWord;
+        for (int i = 0; i < lexicon.size(); i++) {
+            compareWord = lexicon.get(i);
+            AlphaCount compareWordAlpha = new AlphaCount(compareWord);
+            if (userInput.isSubset(compareWordAlpha)) {
+                userInput = userInput.subtract(compareWordAlpha);
+                returnAnagrams = returnAnagrams.addWord(compareWord);
+                generatorBackTrack(anagramList, userInput, returnAnagrams);
+            }
+            else if(userInput.size() == 0) // this is bad
+            {
+                anagramList.add(returnAnagrams);
+            }
+        }
+
+    }
+
+
+
+
+
+
 
 
 }
