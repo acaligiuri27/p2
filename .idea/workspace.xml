@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="379ed3ed-ac10-461e-9494-390113408d63" name="Changes" comment="Half working anagram generator">
+    <list default="true" id="379ed3ed-ac10-461e-9494-390113408d63" name="Changes" comment="More solution attempts but ultimately no progress made">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/caligia998.p2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/caligia998.p2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/anagrams/AnagramGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/anagrams/AnagramGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/anagrams/ConsoleInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/anagrams/ConsoleInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,25 +37,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true",
-    "last_opened_file_path": "C:/Users/acali/IdeaProjects/caligia998.p2/resources",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/acali/IdeaProjects/caligia998.p2/resources&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\acali\IdeaProjects\caligia998.p2\resources" />
@@ -66,17 +68,15 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.testerClassTest.anagramGeneratorClassTests">
-    <configuration name="testerClassTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ConsoleInterface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="anagrams.ConsoleInterface" />
       <module name="caligia998.p2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tests.*" />
+          <option name="PATTERN" value="anagrams.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.testerClassTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -148,10 +148,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.testerClassTest.anagramGeneratorClassTests" />
-        <item itemvalue="JUnit.testerClassTest.anagramGeneratorBasicTests2" />
         <item itemvalue="JUnit.testerClassTest.anagramGeneratorBasicTests3" />
+        <item itemvalue="JUnit.testerClassTest.anagramGeneratorBasicTests2" />
         <item itemvalue="JUnit.testerClassTest.anagramGeneratorBasicTests" />
-        <item itemvalue="JUnit.testerClassTest" />
+        <item itemvalue="Application.ConsoleInterface" />
       </list>
     </recent_temporary>
   </component>
@@ -185,14 +185,7 @@
       <option name="project" value="LOCAL" />
       <updated>1664484832445</updated>
     </task>
-    <task id="LOCAL-00004" summary="Half working anagram generator">
-      <created>1664751721927</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1664751721927</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -210,8 +203,8 @@
     <MESSAGE value="First time" />
     <MESSAGE value="random changes" />
     <MESSAGE value="Updates and almost working anagram" />
-    <MESSAGE value="Half working anagram generator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Half working anagram generator" />
+    <MESSAGE value="More solution attempts but ultimately no progress made" />
+    <option name="LAST_COMMIT_MESSAGE" value="More solution attempts but ultimately no progress made" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -226,12 +219,30 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/anagrams/AnagramGenerator.java</url>
-          <line>51</line>
-          <properties class="anagrams.AnagramGenerator" method="walkthroughBackTrack">
+          <line>81</line>
+          <properties class="anagrams.AnagramGenerator">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="33" />
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/anagrams/AnagramGenerator.java</url>
+          <line>25</line>
+          <properties class="anagrams.AnagramGenerator" method="generateAnagram">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/anagrams/AnagramGenerator.java</url>
+          <line>99</line>
+          <properties class="anagrams.AnagramGenerator">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

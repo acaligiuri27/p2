@@ -10,13 +10,13 @@ public class AnagramGenerator {
     public AnagramGenerator() {
     }
 
-    ;
+
 
     public AnagramGenerator(java.util.List<java.lang.String> lexicon) {
         this.lexicon = lexicon;
     }
 
-    ;
+
 
     public AnagramGenerator(java.util.List<java.lang.String> lexicon, boolean cachingEnabled) throws java.lang.UnsupportedOperationException {
     }
@@ -26,7 +26,11 @@ public class AnagramGenerator {
     public java.util.List<Anagram> generateAnagram(java.lang.String input) {
         List<Anagram> anagramList = new ArrayList<>();
         Anagram addToList = new Anagram();
-        int positionToNotRecompare;
+        //int startPoint = 0;
+        //walkthroughBackTrack(userInput, returnAnagrams, anagramList, startPoint);
+
+
+        int positionToNotRecompare = 0;
         for(int i = 0; i < lexicon.size();i++)
         {
             AlphaCount userInput = new AlphaCount(input);
@@ -45,7 +49,7 @@ public class AnagramGenerator {
             }
         }
 
-        //generatorBackTrack(anagramList, userInput, returnAnagrams);
+        //generatorBackTrack(anagramList, userInput, returnAnagrams, startPoint);
         return anagramList;
     }
 
@@ -74,15 +78,16 @@ public class AnagramGenerator {
 
     }
 
-    private void generatorBackTrack(List anagramList, AlphaCount userInput, Anagram returnAnagrams) {
+/*
+    private void generatorBackTrack(List anagramList, AlphaCount userInput, Anagram returnAnagrams, int startPoint) {
         String compareWord;
         for (int i = 0; i < lexicon.size(); i++) {
             compareWord = lexicon.get(i);
             AlphaCount compareWordAlpha = new AlphaCount(compareWord);
-            if (userInput.isSubset(compareWordAlpha)) {
+            if (userInput.isSubset(compareWordAlpha) && lexicon.get(i) != lexicon.get(startPoint)) {
                 userInput = userInput.subtract(compareWordAlpha);
                 returnAnagrams = returnAnagrams.addWord(compareWord);
-                generatorBackTrack(anagramList, userInput, returnAnagrams);
+                generatorBackTrack(anagramList, userInput, returnAnagrams, startPoint++);
             }
             else if(userInput.size() == 0) // this is bad
             {
@@ -92,8 +97,30 @@ public class AnagramGenerator {
 
     }
 
+    private void walkthroughBackTrack(AlphaCount userInput, Anagram returnAnagrams, List anagramList, int currentPosition )
+    {
+        int counter = 0;
+        while(counter != lexicon.size() && userInput.size() != 0)
+        {
+            AlphaCount compareWord = new AlphaCount(lexicon.get(currentPosition));
+            if(userInput.isSubset(compareWord))
+            {
+                userInput = userInput.subtract(compareWord);
+                returnAnagrams = returnAnagrams.addWord(lexicon.get(currentPosition));
+                walkthroughBackTrack(userInput, returnAnagrams, anagramList, currentPosition++);
+            }
+            counter++;
+            currentPosition++;
+            if(currentPosition == lexicon.size()) { currentPosition = 0;}
+        }
+        if(userInput.size() == 0)
+        {
+            anagramList.add(returnAnagrams);
+        }
 
 
+    }
+ */
 
 
 

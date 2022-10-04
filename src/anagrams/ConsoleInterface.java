@@ -40,7 +40,18 @@ public class ConsoleInterface {
         {
             lexicon.add(fileScanner.next());
         }
-        System.out.println(lexicon);
+
+        System.out.println("Enter word to generate anagram of");
+        String userInput = scanner.nextLine();
+        List<Anagram> anagramList;
+        AnagramGenerator generator = new AnagramGenerator(lexicon);
+        anagramList = generator.generateAnagram(userInput);
+        for(int i = 0; i < anagramList.size(); i++)
+        {
+            System.out.println(anagramList.get(i).toString());
+        }
+
+
 
 
 
