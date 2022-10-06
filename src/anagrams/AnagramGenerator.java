@@ -21,15 +21,15 @@ public class AnagramGenerator {
     public AnagramGenerator(java.util.List<java.lang.String> lexicon, boolean cachingEnabled) throws java.lang.UnsupportedOperationException {
     }
 
-    ;
-
     public java.util.List<Anagram> generateAnagram(java.lang.String input) {
         List<Anagram> anagramList = new ArrayList<>();
         Anagram addToList = new Anagram();
-        //int startPoint = 0;
+        AlphaCount userInput = new AlphaCount(input);
+        Anagram returnAnagrams = new Anagram();
+        int startPoint = 0;
         //walkthroughBackTrack(userInput, returnAnagrams, anagramList, startPoint);
 
-
+        /*
         int positionToNotRecompare = 0;
         for(int i = 0; i < lexicon.size();i++)
         {
@@ -49,7 +49,9 @@ public class AnagramGenerator {
             }
         }
 
-        //generatorBackTrack(anagramList, userInput, returnAnagrams, startPoint);
+         */
+
+        generatorBackTrack(anagramList, userInput, returnAnagrams, startPoint);
         return anagramList;
     }
 
@@ -78,13 +80,13 @@ public class AnagramGenerator {
 
     }
 
-/*
+
     private void generatorBackTrack(List anagramList, AlphaCount userInput, Anagram returnAnagrams, int startPoint) {
         String compareWord;
         for (int i = 0; i < lexicon.size(); i++) {
             compareWord = lexicon.get(i);
             AlphaCount compareWordAlpha = new AlphaCount(compareWord);
-            if (userInput.isSubset(compareWordAlpha) && lexicon.get(i) != lexicon.get(startPoint)) {
+            if (userInput.isSubset(compareWordAlpha)) {
                 userInput = userInput.subtract(compareWordAlpha);
                 returnAnagrams = returnAnagrams.addWord(compareWord);
                 generatorBackTrack(anagramList, userInput, returnAnagrams, startPoint++);
@@ -96,7 +98,7 @@ public class AnagramGenerator {
         }
 
     }
-
+/*
     private void walkthroughBackTrack(AlphaCount userInput, Anagram returnAnagrams, List anagramList, int currentPosition )
     {
         int counter = 0;
