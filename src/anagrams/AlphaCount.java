@@ -60,7 +60,7 @@ public class AlphaCount {
         int size = 0;
         for(Map.Entry<Character,Integer> entry : charCounts.entrySet())
         {
-            size = entry.getValue();
+            size = size + entry.getValue();
         }
         return size;
     }
@@ -101,6 +101,7 @@ public class AlphaCount {
             }
         }
         combinedWords.charCounts = copyCharCounts;
+        combinedWords.size = combinedWords.size();
 
         return combinedWords;
         // how to put this into its own map
@@ -140,6 +141,7 @@ public class AlphaCount {
             }
         }
         combinedWords.charCounts = copyCharCounts;
+        combinedWords.size = combinedWords.size();
         return combinedWords;
     }
 

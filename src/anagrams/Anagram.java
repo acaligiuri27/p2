@@ -5,10 +5,12 @@ import java.util.List;
 
 public class Anagram {
     private List words = new ArrayList<>();
+    private int size;
     public Anagram(){this.words = words;}
     //Creates a new anagram with the words in the given list. Because this class is immutable, it should copy the words into its own list.
     public Anagram(java.util.List<java.lang.String> words){
         this.words=words;
+        this.size = size();
     }
 
     public Anagram addWord(java.lang.String word)

@@ -87,7 +87,17 @@ class testerClassTest {
         System.out.println(otherWord.toString());
         AlphaCount subCount = simpleWord.subtract(otherWord);
         System.out.println(subCount.toString());
+        System.out.println(subCount.size());
+        System.out.println(simpleWord.size());
+        System.out.println(otherWord.size());
 
+    }
+
+    @Test
+    public void addTests()
+    {
+        AlphaCount simpleWord = new AlphaCount("as");
+        AlphaCount otherWord = new AlphaCount();
     }
 
     @Test

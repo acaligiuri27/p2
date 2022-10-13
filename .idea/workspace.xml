@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="379ed3ed-ac10-461e-9494-390113408d63" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
+    <list default="true" id="379ed3ed-ac10-461e-9494-390113408d63" name="Changes" comment="Half working anagram generator">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/anagrams/AlphaCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/anagrams/AlphaCount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/anagrams/Anagram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/anagrams/Anagram.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/anagrams/AnagramGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/anagrams/AnagramGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/anagrams/ULHashMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/anagrams/ULHashMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/testerClassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/testerClassTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,26 +39,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true",
-    "last_opened_file_path": "C:/Users/acali/IdeaProjects/caligia998.p2/resources",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/acali/IdeaProjects/caligia998.p1&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\acali\IdeaProjects\caligia998.p2\resources" />
@@ -68,19 +70,6 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.testerClassTest.anagramGeneratorClassTests">
-    <configuration name="ConsoleInterface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="anagrams.ConsoleInterface" />
-      <module name="caligia998.p2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="anagrams.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="testerClassTest.anagramGeneratorBasicTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="caligia998.p2" />
       <extension name="coverage">
@@ -145,13 +134,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="testerClassTest.subtractTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="caligia998.p2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.testerClassTest" />
+      <option name="METHOD_NAME" value="subtractTests" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.testerClassTest.anagramGeneratorClassTests" />
+        <item itemvalue="JUnit.testerClassTest.anagramGeneratorBasicTests3" />
         <item itemvalue="JUnit.testerClassTest.anagramGeneratorBasicTests2" />
         <item itemvalue="JUnit.testerClassTest.anagramGeneratorBasicTests" />
-        <item itemvalue="Application.ConsoleInterface" />
-        <item itemvalue="JUnit.testerClassTest.anagramGeneratorBasicTests3" />
+        <item itemvalue="JUnit.testerClassTest.subtractTests" />
       </list>
     </recent_temporary>
   </component>
@@ -185,12 +190,12 @@
       <option name="project" value="LOCAL" />
       <updated>1664484832445</updated>
     </task>
-    <task id="LOCAL-00004" summary="More solution attempts but ultimately no progress made">
-      <created>1664858294572</created>
+    <task id="LOCAL-00004" summary="Half working anagram generator">
+      <created>1664751721927</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1664858294572</updated>
+      <updated>1664751721927</updated>
     </task>
     <option name="localTasksCounter" value="5" />
     <servers />
@@ -210,8 +215,8 @@
     <MESSAGE value="First time" />
     <MESSAGE value="random changes" />
     <MESSAGE value="Updates and almost working anagram" />
-    <MESSAGE value="More solution attempts but ultimately no progress made" />
-    <option name="LAST_COMMIT_MESSAGE" value="More solution attempts but ultimately no progress made" />
+    <MESSAGE value="Half working anagram generator" />
+    <option name="LAST_COMMIT_MESSAGE" value="Half working anagram generator" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -226,17 +231,8 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/anagrams/AnagramGenerator.java</url>
-          <line>83</line>
+          <line>69</line>
           <properties class="anagrams.AnagramGenerator" method="generatorBackTrack">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/anagrams/AnagramGenerator.java</url>
-          <line>23</line>
-          <properties class="anagrams.AnagramGenerator" method="generateAnagram">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -244,14 +240,30 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/anagrams/AnagramGenerator.java</url>
-          <line>101</line>
-          <properties class="anagrams.AnagramGenerator">
+          <line>36</line>
+          <properties class="anagrams.AnagramGenerator" method="exhaustiveSearch">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="37" />
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/anagrams/AnagramGenerator.java</url>
+          <line>78</line>
+          <option name="timeStamp" value="44" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="anagrams.AlphaCount" memberName="charCounts" />
+        <PinnedItemInfo parentTag="anagrams.AlphaCount" memberName="size" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/caligia998_p2$testerClassTest_anagramGeneratorClassTests.ic" NAME="testerClassTest.anagramGeneratorClassTests Coverage Results" MODIFIED="1665434487474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>tests.*</FILTER>
+    </SUITE>
   </component>
 </project>

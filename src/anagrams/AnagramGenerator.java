@@ -26,34 +26,73 @@ public class AnagramGenerator {
         Anagram addToList = new Anagram();
         AlphaCount userInput = new AlphaCount(input);
         Anagram returnAnagrams = new Anagram();
-        int startPoint = 0;
-        //walkthroughBackTrack(userInput, returnAnagrams, anagramList, startPoint);
+        AlphaCount subWord = new AlphaCount();
+        AlphaCount editedInput = new AlphaCount(input);
+        Anagram previousAnagram = new Anagram();
+        //generatorBackTrack(anagramList, userInput, subWord, editedInput, returnAnagrams, previousAnagram);
+        exhaustiveSearch( anagramList,  userInput,  subWord,  editedInput,  returnAnagrams, previousAnagram);
+        return anagramList;
+    }
 
-        /*
-        int positionToNotRecompare = 0;
-        for(int i = 0; i < lexicon.size();i++)
+    private void exhaustiveSearch(List anagramList, AlphaCount userInput, AlphaCount subWord, AlphaCount editedInput, Anagram returnAnagrams, Anagram previousAnagram)
+    {
+        String compareWord;
+
+
+        for(int i = 0; i < lexicon.size(); i++)
         {
-            AlphaCount userInput = new AlphaCount(input);
-            Anagram returnAnagrams = new Anagram();
-            AlphaCount compareWord = new AlphaCount(lexicon.get(i));
-            if(userInput.isSubset(compareWord))
+            compareWord = lexicon.get(i);
+            AlphaCount compareWordAlpha = new AlphaCount(compareWord);
+
+            if(userInput.isSubset(compareWordAlpha))
             {
-                userInput = userInput.subtract(compareWord);
-                returnAnagrams = returnAnagrams.addWord(lexicon.get(i));
-                positionToNotRecompare = i;
-                addToList = (walkthroughBackTrack(userInput, returnAnagrams, anagramList, positionToNotRecompare));
-                if(addToList.size() != 0)
-                {
-                    anagramList.add(addToList);
+                subWord = compareWordAlpha;
+                userInput = userInput.subtract(compareWordAlpha);
+                previousAnagram = returnAnagrams;
+                returnAnagrams = returnAnagrams.addWord(compareWord);
+                // recurse here
+                if(!userInput.isEmpty()) {
+                    exhaustiveSearch(anagramList, userInput, subWord, editedInput, returnAnagrams, previousAnagram);
+                    returnAnagrams = previousAnagram;
+                    userInput = userInput.add(subWord);
                 }
+            }
+            if(userInput.isEmpty())
+            {
+                anagramList.add(returnAnagrams);
+                userInput = userInput.add(subWord);
+                returnAnagrams = previousAnagram;
+                // should not be an empty anagram here
             }
         }
 
-         */
-
-        generatorBackTrack(anagramList, userInput, returnAnagrams, startPoint);
-        return anagramList;
     }
+    private void generatorBackTrack(List anagramList, AlphaCount userInput, AlphaCount subWord, AlphaCount editedInput, Anagram returnAnagrams, Anagram previousAnagram) {
+        String compareWord;
+
+
+        for(int i = 0; i < lexicon.size();i++)
+        {
+            compareWord = lexicon.get(i);
+            AlphaCount compareWordAlpha = new AlphaCount(compareWord);
+            if (userInput.isSubset(compareWordAlpha)) {
+                userInput = userInput.subtract(compareWordAlpha);
+                subWord = compareWordAlpha;
+                previousAnagram = returnAnagrams;
+                returnAnagrams = returnAnagrams.addWord(compareWord);
+                if(userInput.size() == 0)
+                {
+                    anagramList.add(returnAnagrams);
+                    userInput = editedInput;
+                    returnAnagrams = new Anagram();
+                }
+                generatorBackTrack(anagramList, userInput, subWord, editedInput, returnAnagrams, previousAnagram);
+            }
+
+        }
+
+    }
+
 
     private Anagram walkthroughBackTrack(AlphaCount userInput, Anagram returnAnagrams, List anagramList, int positionToNotRecompare )
     {
@@ -80,49 +119,6 @@ public class AnagramGenerator {
 
     }
 
-
-    private void generatorBackTrack(List anagramList, AlphaCount userInput, Anagram returnAnagrams, int startPoint) {
-        String compareWord;
-        for (int i = 0; i < lexicon.size(); i++) {
-            compareWord = lexicon.get(i);
-            AlphaCount compareWordAlpha = new AlphaCount(compareWord);
-            if (userInput.isSubset(compareWordAlpha)) {
-                userInput = userInput.subtract(compareWordAlpha);
-                returnAnagrams = returnAnagrams.addWord(compareWord);
-                generatorBackTrack(anagramList, userInput, returnAnagrams, startPoint++);
-            }
-            else if(userInput.size() == 0) // this is bad
-            {
-                anagramList.add(returnAnagrams);
-            }
-        }
-
-    }
-/*
-    private void walkthroughBackTrack(AlphaCount userInput, Anagram returnAnagrams, List anagramList, int currentPosition )
-    {
-        int counter = 0;
-        while(counter != lexicon.size() && userInput.size() != 0)
-        {
-            AlphaCount compareWord = new AlphaCount(lexicon.get(currentPosition));
-            if(userInput.isSubset(compareWord))
-            {
-                userInput = userInput.subtract(compareWord);
-                returnAnagrams = returnAnagrams.addWord(lexicon.get(currentPosition));
-                walkthroughBackTrack(userInput, returnAnagrams, anagramList, currentPosition++);
-            }
-            counter++;
-            currentPosition++;
-            if(currentPosition == lexicon.size()) { currentPosition = 0;}
-        }
-        if(userInput.size() == 0)
-        {
-            anagramList.add(returnAnagrams);
-        }
-
-
-    }
- */
 
 
 
